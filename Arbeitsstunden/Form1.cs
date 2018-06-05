@@ -12,9 +12,19 @@ namespace Arbeitsstunden
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        Steuerung dieSteuerung;
+        System.Threading.Thread mitgliederVerwaltung;
+
+        public Form1(Steuerung pSteuerung)
         {
             InitializeComponent();
+            dieSteuerung = pSteuerung;
+        }
+
+        private void btn_mitgliederVerwaltung_Click(object sender, EventArgs e)
+        {
+            mitgliederVerwaltung = new System.Threading.Thread(new System.Threading.ThreadStart(dieSteuerung.schowMitgliederVerwaltung));
+            mitgliederVerwaltung.Start();
         }
     }
 }

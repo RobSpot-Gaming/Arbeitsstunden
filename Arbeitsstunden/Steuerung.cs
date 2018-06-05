@@ -8,14 +8,23 @@ using System.Windows.Forms;
 
 namespace Arbeitsstunden
 {
-    class Steuerung
+
+    public class Steuerung
     {
+        MitgliederVerwaltung dieMitgliederVerwaltung;
+        Form1 Home;
+
         Datenbank dieDatenbank;
         public Steuerung()
         {
-            Form1 Home;
-            Application.Run(Home = new Form1());
             dieDatenbank = new Datenbank();
+            Application.Run(Home = new Form1(this));
+            
+        }
+
+        public void schowMitgliederVerwaltung()
+        {
+            Application.Run(dieMitgliederVerwaltung = new MitgliederVerwaltung(dieDatenbank));
         }
     }
 }
