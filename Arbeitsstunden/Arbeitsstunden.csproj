@@ -61,6 +61,12 @@
     <Compile Include="MitgliederVerwaltung.Designer.cs">
       <DependentUpon>MitgliederVerwaltung.cs</DependentUpon>
     </Compile>
+    <Compile Include="MitgliedHinzufügen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MitgliedHinzufügen.Designer.cs">
+      <DependentUpon>MitgliedHinzufügen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Steuerung.cs" />
@@ -69,6 +75,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MitgliederVerwaltung.resx">
       <DependentUpon>MitgliederVerwaltung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MitgliedHinzufügen.resx">
+      <DependentUpon>MitgliedHinzufügen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

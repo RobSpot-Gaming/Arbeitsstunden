@@ -17,7 +17,7 @@ namespace Arbeitsstunden
         /// </summary>
         public Datenbank()
         {
-            SQLiteConnection.CreateFile("Arbeitsstunden.sqlite");
+            //SQLiteConnection.CreateFile("Arbeitsstunden.sqlite");
             myDBConnection = new SQLiteConnection("Data Source=Arbeitsstunden.sqlite;Version=3;");
             myDBConnection.Open();
 
@@ -30,9 +30,9 @@ namespace Arbeitsstunden
         /// </summary>
         private void createStructure()
         {
-            executeCommand("create table mitglied (nummer int, vName varchar(20), name varchar(20), arbeitsstunden int)");
+            executeCommand("CREATE TABLE IF NOT EXISTS mitglied (nummer int, vName varchar(20), name varchar(20), arbeitsstunden int);");
 
-            executeCommand("create table arbeitseinsatz (nummer int, name varchar(20), datum string, dauer int, verantwortlicher int)");
+            executeCommand("CREATE TABLE IF NOT EXISTS arbeitseinsatz (nummer int, name varchar(20), datum string, dauer int, verantwortlicher int);");
         }
 
         /// <summary>
@@ -64,6 +64,13 @@ namespace Arbeitsstunden
 
             dataadapter.Fill(ds, "mitglied");
             return ds;
+        }
+
+        public void insert(string pTable, string pSpalten, string pDaten)
+        {
+            SQLiteCommand command = new SQLiteCommand(myDBConnection);
+            command.CommandText = "INSERT INTO " + pTable + " (" + pSpalten + ") VALUES("+ pDaten + ")";
+            command.ExecuteNonQuery();
         }
     }
 }
