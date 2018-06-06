@@ -55,6 +55,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mitgiled bearbeiten.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mitgiled bearbeiten.Designer.cs">
+      <DependentUpon>Mitgiled bearbeiten.cs</DependentUpon>
+    </Compile>
     <Compile Include="MitgliederVerwaltung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +78,9 @@
     <Compile Include="Steuerung.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mitgiled bearbeiten.resx">
+      <DependentUpon>Mitgiled bearbeiten.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MitgliederVerwaltung.resx">
       <DependentUpon>MitgliederVerwaltung.cs</DependentUpon>

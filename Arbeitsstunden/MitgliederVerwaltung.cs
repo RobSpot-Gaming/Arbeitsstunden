@@ -46,5 +46,14 @@ namespace Arbeitsstunden
             MitgliedHinzufügen dasMitgliedHinzufügen = new MitgliedHinzufügen(dieDatenbank);
             dasMitgliedHinzufügen.ShowDialog();
         }
+
+        private void btn_bearbeiten_Click(object sender, EventArgs e)
+        {
+            string nummer = Convert.ToString(dataGridView1.CurrentRow.Cells[0].Value);
+            btn_bearbeiten.Text = nummer;
+
+            //MitgiledBearbeiten dasMitgliedBearbeiten = new MitgliedBearbeiten(dieDatenbank,nummer);
+            //dasMitgliedBearbeiten.ShowDialog();
+        }
     }
 }

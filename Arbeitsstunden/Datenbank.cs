@@ -57,6 +57,9 @@ namespace Arbeitsstunden
             return string.Format(dateTimeFormat, datetime.Year, datetime.Month, datetime.Day, datetime.Hour, datetime.Minute, datetime.Second, datetime.Millisecond);
         }
 
+
+
+
         public DataSet DataAdapter(string sqlAbfrage)
         {
             SQLiteDataAdapter dataadapter = new SQLiteDataAdapter(sqlAbfrage, myDBConnection);
